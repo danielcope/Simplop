@@ -7,7 +7,6 @@ const Nav = () => {
   return (
     <div>
       <Link to="/">Home</Link>
-      <Link to="/auth">Login</Link>
     </div>
 
 )

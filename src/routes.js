@@ -1,10 +1,12 @@
 import { Switch, Route } from 'react-router-dom';
-import Auth from './components/Auth';
 import Home from './components/Home'
+import Trends from './components/Trends'
+import Notification from './components/Notification'
 
 export default (
     <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/auth' component={Auth} />
+        <Route path='/trends' component={Trends} />
+        <Route path='/notification' component={Notification} />
     </Switch>
 );
