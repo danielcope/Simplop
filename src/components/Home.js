@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { Component } from 'react'
 import Header from './Header'
 import Auth from './Auth'
@@ -7,10 +7,16 @@ import Auth from './Auth'
 class Home extends Component {
   constructor (){
     super();
-    
+    this.state = {
+
+    }
   }
   
   render(){
+
+    console.log(this.props);
+    const { history } = this.props
+
     return (
       <div>
         <div className = "header-all">
@@ -19,7 +25,7 @@ class Home extends Component {
         </div>
         <h3>Welcome to Simplop</h3>
         <section>
-          <Auth/>
+          <Auth history={history} />
         </section>
       </div>
       

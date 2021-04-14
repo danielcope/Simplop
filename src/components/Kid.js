@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Nav from './Nav'
 
-const Kid = () => {
 
-  return (
-    <div></div>
+class Kid extends Component {
+  constructor () {
+    super ();
+    this.state = {
 
-)
+    }
+  }
+
+  componentDidMount () {
+    
+  }
+
+
+  render () {
+    return (
+      <div>
+        <Nav />
+
+
+      </div>
+
+    )
+  }
 }
 
 export default Kid

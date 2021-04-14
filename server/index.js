@@ -39,7 +39,7 @@ app.post( '/api/event', eventCtrl.addEvent )
 app.put( '/api/event/:event_id', eventCtrl.editEvent )
 app.delete( '/api/event/:event_id', eventCtrl.deleteEvent )
 
-// Reminder endpoints
+// Notification endpoints
 app.get ( '/api/notification', notificationCtrl.getNotification )
 app.put( '/api/notification/:notification_id', notificationCtrl.editNotification )
 app.post( '/api/notification', notificationCtrl.addNotification )

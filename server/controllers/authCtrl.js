@@ -5,7 +5,7 @@ module.exports = {
     const db = req.app.get('db')
     const { username, password } = req.body;
 
-    const [ existingUser ] = await db.auth.get_parent_by_username(email);
+    const [ existingUser ] = await db.auth.get_parent_by_username(username);
     
     if (existingUser) {
         return res.status(409).send('User already exists')

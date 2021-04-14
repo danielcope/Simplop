@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import logo from './../../assets/helo_logo.png';
 import { connect } from 'react-redux'
-import { updateUser } from '../../redux/reducer'
-
-import './Auth.css';
-
+import { updateUser } from '../redux/parentReducer'
 
 class Auth extends Component {
   constructor(props) {
@@ -15,19 +11,27 @@ class Auth extends Component {
       password: '',
       errorMsg: ''
     }
-    this.login = this.login.bind(this);
-    this.register = this.register.bind(this);
+   
   }
   
-  handleChange(val) {
+  handleUsernameChange (val) {
     this.setState({ username:val })
+    console.log(val);
+  }
+  
+  handlePasswordChange (val) {
+    this.setState({ password:val })
+    console.log(val);
   }
   
   login() {
-    axios.post('/auth/login', this.state)
+
+    const { username,password } = this.state
+
+    axios.post('/auth/login', {username:username,password:password})
       .then(res => {
-        this.props.updateUser({username:this.state.username,password:this.state.password})
-        // this.props.history.push('/kid')
+        this.props.updateUser({username:username , password:password})
+        this.props.history.push('/kid')
       })
       .catch(err => {
         console.log(err)
@@ -35,12 +39,15 @@ class Auth extends Component {
       })
     }
     
-    register() {
-      axios.post('/auth/register', this.state)
-        .then(res => {
-          this.props.updateUser({username:this.state.username,password:this.state.password})
-          // this.props.history.push('/kid')
-        })
+    register = () => {
+      
+      const { username,password } = this.state
+      
+      axios.post('/auth/register', {username:username,password:password})
+      .then(res => {
+        this.props.updateUser({username:username,password:password})
+        this.props.history.push('/kid')
+      })
         .catch(err => {
           console.log(err)
           this.setState({errorMsg: 'Username taken!'})
@@ -59,17 +66,20 @@ class Auth extends Component {
     return (
       <div className='auth'>
         <div className='auth-container'>
+        {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
           <div className='auth-input-box'>
             <p>Username:</p>
-            <input value={this.state.username} onChange={e => this.handleChange(e.target.value)} />
+            <input value={this.state.username} placeholder="username" onChange={e => this.handleUsernameChange(e.target.value)} />
           </div>
           <div className='auth-input-box'>
-            <p>Password:</p>
-            <input value={this.state.password} type='password' onChange={e => this.handleChange(e.target.value)} />
+            <input value={this.state.password} type='password' placeholder="password" onChange={e => this.handlePasswordChange(e.target.value)} />
           </div>
           <div className='auth-button-container'>
-            <button className='dark-button' onClick={this.login}> Login </button>
-            <button className='dark-button' onClick={this.register}> Register </button>
+            <button className='login-button' onClick={this.login}> Login </button>
+            <button className='register-button' onClick={this.register}> Register </button>
+
+
+
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
-
+DROP TABLE parent
+DROP TABLE event
+DROP TABLE parent
+DROP TABLE parent
 
 CREATE TABLE parent (
   parent_id SERIAL PRIMARY KEY,

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import routes from './routes'
 import './App.css';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        { routes }
       </div>
     );
     }

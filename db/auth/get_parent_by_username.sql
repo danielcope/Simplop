@@ -1,2 +1,2 @@
 SELECT * FROM parent
-WHERE username = $1a
+WHERE username = $1
