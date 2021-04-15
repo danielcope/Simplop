@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
-
+import AddKid from './AddKid'
 
 class Kid extends Component {
   constructor () {
@@ -10,17 +10,16 @@ class Kid extends Component {
     }
   }
 
-  componentDidMount () {
+  // componentDidMount () {
     
-  }
+  // }
 
 
   render () {
     return (
       <div>
         <Nav />
-
-
+        <AddKid />
       </div>
 
     )

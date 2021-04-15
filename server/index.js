@@ -23,6 +23,7 @@ app.use(session({
 
 //-------------Endpoints------------------
 // AUTH endpoints
+app.get( '/auth/parent', authCtrl.getUser )
 app.post( '/auth/register', authCtrl.register )
 app.post( '/auth/login', authCtrl.login )
 app.delete( '/auth/logout', authCtrl.logout )

@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { Link,withRouter } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { updateUser,logout } from '../redux/parentReducer'
+import { connect } from 'react-redux'
+import axios from 'axios';
+
 
 class Nav extends Component {
   constructor () {
@@ -9,16 +13,30 @@ class Nav extends Component {
     }
   }
 
+  componentDidMount = () => {
+    this.getUser()
+  }
+
+  getUser = () => {
+    axios.get( '/auth/parent' )
+    .then(res => this.props.updateUser(res.data))
+  }
+
+  logout = () => {
+    axios.delete( '/auth/logout' )
+    .then(res => this.props.logout)
+  }
+
   render () {
 
-    console.log(this.state)
+    console.log('Nav',this.props)
 
     return (
-        <div>
-          <Link to='/' >Logout</Link>
-        </div>
+      <div>
+        RAWR
+      </div>
 
     )
   }
 }
-export default Nav
+export default connect (null, {updateUser,logout}) (Nav)

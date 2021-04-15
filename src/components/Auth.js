@@ -24,7 +24,7 @@ class Auth extends Component {
     console.log(val);
   }
   
-  login() {
+  login = () => {
 
     const { username,password } = this.state
 
@@ -63,6 +63,9 @@ class Auth extends Component {
   }
 
   render() {
+
+    console.log('auth', this.props);
+
     return (
       <div className='auth'>
         <div className='auth-container'>
