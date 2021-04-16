@@ -64,7 +64,7 @@ class Auth extends Component {
 
   render() {
 
-    console.log('auth', this.props);
+    console.log(this.props);
 
     return (
       <div className='auth'>

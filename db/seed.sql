@@ -1,7 +1,7 @@
-DROP TABLE parent
-DROP TABLE event
-DROP TABLE parent
-DROP TABLE parent
+DROP TABLE parent;
+DROP TABLE event;
+DROP TABLE kid;
+DROP TABLE notification;
 
 CREATE TABLE parent (
   parent_id SERIAL PRIMARY KEY,
@@ -18,14 +18,18 @@ CREATE TABLE kid (
 CREATE TABLE event (
   event_id SERIAL PRIMARY KEY,
   kid_id int references kid (kid_id),
-  type boolean,
-  time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  date DATE NOT NULL DEFAULT CURRENT_DATE
+  num1_num2 varchar (20),
+  hour int,
+  min int,
+  month int,
+  day int,
+  year int
 );
 
 CREATE TABLE notification (
   notification_id SERIAL PRIMARY KEY,
-  kid_id INT REFERENCES kid (kid_id),
+  parent_id INT REFERENCES kid (kid_id),
   notification_hour int,
-  notification_min int
+  notification_min int,
+  ap_pm varchar(20)
 );

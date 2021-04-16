@@ -19,6 +19,8 @@ module.exports = {
 
     req.session.user = newUser;
 
+    console.log(req.session.user)
+
     res.status(200).send(req.session.user)
   },
             
@@ -52,9 +54,7 @@ module.exports = {
   },
 
   getUser: (req,res) => {
-    const { username } = req.session.user;
-    
-    if(username) {
+    if(req.session.user) {
       return res.status(200).send(req.session.user)
     } else {
       return res.status(404).send('No user logged in.')

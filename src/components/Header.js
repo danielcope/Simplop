@@ -1,14 +1,24 @@
-import React from 'react'
-import Nav from './Nav'
+import React, { Component } from 'react'
 
-const Header = () => {
+class Header extends Component {
+  constructor(){
+    super()
+    this.state = {
+      username:''
+    }
+  }
 
+  
+
+
+render(){
   return (
     <div className="header">
-      <Nav />
+      {this.state.username ? <h1>Welcome, {this.state.username}</h1> : ""}
     </div>
 
 )
+}
 }
 
 export default Header
