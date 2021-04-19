@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0
+}
+
+.welcome {
+  position:fixed;
+  top: 25vh;
+  left:45%;
+  font-size: 5vh;
+  color:rgb(0, 27, 77);
+  width: 50%;
+  text-align: center;
+}
+
+.home {
+  background: url(https://image.freepik.com/free-vector/cartoon-bath-cute-white-hot-shower-bathtub-with-bubbles-toy-inside-bathroom-isolated-relaxing-room-illustration_176411-1013.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login {
+  float:right;
+  padding-right: 10px;
+  padding-top: 15px;
+  font-size: 24px;
+
+}
+
+.auth-opened {
+  position: fixed;
+  top:9vh;
+  height: 60vh;
+  width:100vw;
+  background-color: rgb(0, 13, 48);
+  transition: opacity 0.4s, top 0.4s;
+  color: white;
+  z-index: 2;
+}
+
+.auth-closed {
+  position: relative;
+  top: -300px;
+  opacity: 0;
+  transition: opacity 0.4s, top 0.4s
+}
+
+.auth-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+
+}
+
+.auth-input-box {
+  height: 5vh;
+  width: 50vw;
+  text-align:center;
+  margin: 10px;
+}
+
+.auth-button-container {
+  height:50px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 25px;
+}
+
+.login-button {
+  width: 20vw;
+  font-size: 16px;
+  background-color: rgb(0, 13, 48);
+  border: solid 2px rgb(108, 205, 250);
+  color:rgb(108, 205, 250);
+  z-index: 5;
+}
+
+.register-button {
+  width: 20vw;
+  font-size: 16px;
+  background-color: rgb(0, 13, 48);
+  border: solid 2px rgb(108, 205, 250);
+  color:rgb(108, 205, 250);
+}
+
+.login-button:hover {
+  cursor: pointer;
+}
+
+.auth-error-msg {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  border: solid 2px;
+  background-color:rgb(108, 205, 250);
+}
+
+.close-err {
+  padding-left: 25px;
+}
+
+.close-err:hover {
+  cursor: pointer;
+  color: rgb(0, 13, 48); 
+}
+
+.kid {
+  height: 10vh;
+  width: 95vw;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid;
+  margin:5px 
+}
+
+.add-kid {
+  height: 10vh;
+  width: 95vw;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid;
+  margin:5px 
+}
+
+.add-kid-button {
+  height: 50%;
+
+}
+
+.add-kid-input {
+  height: 50%;
+}
+
+@media (min-width:700px) {
+  .welcome {
+    left: 25%;
+    width: 40%;
+    font-size: 6vh;
+  }
+}
+
+
+@media (min-width:1000px) {
+
+  .welcome {
+    left:15%;
+  }
+
+  .auth-opened {
+    position: fixed;
+    top:10vh;
+    right: 0;
+    height: 80vh;
+    width:40vw;
+    background-color: rgb(0, 13, 48);
+    transition: opacity 0.4s, right 0.4s;
+    color: white;
+    z-index: 2;
+  }
+  
+  .auth-closed {
+    position: relative;
+    top: -300px;
+    opacity: 0;
+    transition: opacity 0.4s, right 0.4s
+  }
+
+  .auth-input-box {
+    height: 5vh;
+    width: 15vw;
+    text-align:center;
+    margin: 10px;
+  }
+  
+  .auth-button-container {
+    width: 25vw;
+  }
+  
+  .login-button {
+    width: 10vw;
+  }
+  
+  .register-button {
+    width: 10vw;
+  }
+
+  
+}
+
+@media (max-width: 1350px) {
+
+  .welcome {
+    top: 35vh;
+  }
+}
+
+
+/* TRASH CAN */
+
+.icon-trash {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-trash .trash-lid {
+  width: 62%;
+  height: 10%;
+  position: absolute;
+  left: 50%;
+  margin-left: -31%;
+  top: 10.5%;
+  background-color: #000;
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg); 
+}
+
+.icon-trash .trash-lid:after {
+  content: "";
+  width: 26%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -13%;
+  margin-top: -10%;
+  background-color: inherit;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg); 
+}
+
+.icon-trash .trash-container {
+  width: 56%;
+  height: 65%;
+  position: absolute;
+  left: 50%;
+  margin-left: -28%;
+  bottom: 10%;
+  background-color: #000;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+}
+
+.icon-trash .trash-container:after {
+  content: "";
+  width: 110%;
+  height: 12%;
+  position: absolute;
+  left: 50%;
+  margin-left: -55%;
+  top: 0;
+  background-color: inherit;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+
+.icon-trash .trash-line-1 {
+  width: 4%;
+  height: 50%;
+  position: absolute;
+  left: 38%;
+  margin-left: -2%;
+  bottom: 17%;
+  background-color: #252527;
+}
+
+.icon-trash .trash-line-2 {
+  width: 4%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -2%;
+  bottom: 17%;
+  background-color: #252527;
+}
+
+.icon-trash .trash-line-3 {
+  width: 4%;
+  height: 50%;
+  position: absolute;
+  left: 62%;
+  margin-left: -2%;
+  bottom: 17%;
+  background-color: #252527;
+}
+
+/* END TRASH CAN */

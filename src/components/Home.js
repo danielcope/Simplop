@@ -6,28 +6,27 @@ class Home extends Component {
   constructor (){
     super();
     this.state = {
-      username:''
+      username:'',
+      menu: false
     }
   }
 
   
+  clickHandler = () => {
+    this.setState({ menu: !this.state.menu })
+  }
+
   
   render(){
-
-
-
     const { history } = this.props
 
-
     return (
-      <div>
-        <div className = "header-all">
-          <span className = "login">Login &equiv;</span>
-        </div>
-        <h3>Welcome to Simplop</h3>
-        <section>
+      <div className='home'>
+          <span className = "login" onClick={this.clickHandler}>Login &equiv;</span>
+        <section className={ this.state.menu ? 'auth-opened' : 'auth-closed' }>
           <Auth history={history} />
         </section>
+        <h3 className='welcome' >Welcome to Simplop</h3>
       </div>
       
     )

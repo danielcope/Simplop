@@ -1,5 +1,5 @@
 const initialState = {
-  kid: '',
+  kid: [],
 }
 
 const GET_KID = 'GET_KID'

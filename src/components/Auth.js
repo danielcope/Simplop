@@ -66,22 +66,18 @@ class Auth extends Component {
     return (
       <div className='auth'>
         <div className='auth-container'>
-        {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
-          <div className='auth-input-box'>
-            <p>Username:</p>
-            <input value={this.state.username} placeholder="username" onChange={e => this.handleUsernameChange(e.target.value)} />
+          <div>
+            <input className='auth-input-box' value={this.state.username} placeholder="username" onChange={e => this.handleUsernameChange(e.target.value)} />
           </div>
-          <div className='auth-input-box'>
-            <input value={this.state.password} type='password' placeholder="password" onChange={e => this.handlePasswordChange(e.target.value)} />
+          <div >
+            <input className='auth-input-box' value={this.state.password} type='password' placeholder="password" onChange={e => this.handlePasswordChange(e.target.value)} />
           </div>
           <div className='auth-button-container'>
             <button className='login-button' onClick={this.login}> Login </button>
             <button className='register-button' onClick={this.register}> Register </button>
-
-
-
           </div>
         </div>
+          {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span className='close-err' onClick={this.closeErrorMessage}>X</span></h3>}
       </div>
     );
   }
