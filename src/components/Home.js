@@ -18,6 +18,7 @@ class Home extends Component {
 
     const { history } = this.props
 
+
     return (
       <div>
         <div className = "header-all">

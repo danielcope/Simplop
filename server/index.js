@@ -29,7 +29,7 @@ app.post( '/auth/login', authCtrl.login )
 app.delete( '/auth/logout', authCtrl.logout )
 
 // KID endpoints
-app.get( '/api/kid/:username', kidCtrl.getKid )
+app.get( '/api/kid', kidCtrl.getKid )
 app.post ( '/api/kid', kidCtrl.addKid ) 
 app.put ( '/api/kid/:kid_id', kidCtrl.editName )
 app.delete ( '/api/kid/:kid_id', kidCtrl.deleteKid )

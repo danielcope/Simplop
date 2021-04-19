@@ -4,7 +4,8 @@ import AddKid from './AddKid'
 import Header from './Header'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import updateKid from '../redux/kidReducer'
+import { updateKid } from '../redux/kidReducer'
+import KidList from './KidList'
 
 class Kid extends Component {
   constructor () {
@@ -14,26 +15,26 @@ class Kid extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.getKid()
-  // }
+  componentDidMount() {
+    this.getKid()
+  }
 
   getKid = () => {
-    axios.get(`/api/kid/${this.props.parentReducer.user.username}`)
+    axios.get(`/api/kid`)
     .then(res =>
-      this.props.updateKid({res})
+      this.props.updateKid(res.data)
 
       )};
   
 
   render () {
     
-    console.log(this.props)
 
     return (
       <div>
         <Header />
         <Nav />
+        <KidList /> 
         <AddKid />
 
       </div>

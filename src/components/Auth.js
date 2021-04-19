@@ -61,8 +61,7 @@ class Auth extends Component {
   }
 
   render() {
-
-    
+ 
 
     return (
       <div className='auth'>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import axios from 'axios';
 
 class AddKid extends Component {
   constructor () {
@@ -10,11 +11,10 @@ class AddKid extends Component {
 
   handleNameInput = (val) => {
     this.setState({ name:val })
-    console.log(val);
   }
 
   // addKid = () => {
-    
+  //   axios.post( '/api/kid', {kid_name:this.state.name} )    
   // }
 
   render () {
