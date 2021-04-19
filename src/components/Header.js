@@ -14,7 +14,7 @@ class Header extends Component {
 render(){
   return (
     <div className="header">
-      {this.state.username ? <h1>Welcome, {this.state.username}</h1> : ""}
+      {this.props.username ? <h1>Welcome, {this.props.username}</h1> : ""}
     </div>
 
 )

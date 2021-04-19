@@ -16,12 +16,10 @@ class Auth extends Component {
   
   handleUsernameChange (val) {
     this.setState({ username:val })
-    console.log(val);
   }
   
   handlePasswordChange (val) {
     this.setState({ password:val })
-    console.log(val);
   }
   
   login = () => {
@@ -30,7 +28,7 @@ class Auth extends Component {
 
     axios.post('/auth/login', {username:username,password:password})
       .then(res => {
-        this.props.updateUser({username:username , password:password})
+        this.props.updateUser({username:username})
         this.props.history.push('/kid')
       })
       .catch(err => {
@@ -64,7 +62,7 @@ class Auth extends Component {
 
   render() {
 
-    console.log(this.props);
+    
 
     return (
       <div className='auth'>
@@ -90,4 +88,6 @@ class Auth extends Component {
   }
 }
 
-export default connect (null, {updateUser}) (Auth);
+const mapStateToProps = state => state
+
+export default connect (mapStateToProps, {updateUser}) (Auth);

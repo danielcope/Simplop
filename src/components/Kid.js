@@ -3,41 +3,46 @@ import Nav from './Nav'
 import AddKid from './AddKid'
 import Header from './Header'
 import axios from 'axios'
-
+import {connect} from 'react-redux'
+import updateKid from '../redux/kidReducer'
 
 class Kid extends Component {
   constructor () {
     super ();
     this.state = {
-      username:''
-    }
+      user:''
+    };
   }
 
-  componentDidMount = () => {
-    this.getUser()
-  }
+  // componentDidMount() {
+  //   this.getKid()
+  // }
 
-  getUser = () => {
-    axios.get( '/auth/parent' )
-    .then(res => 
-    this.setState({ username:res.data.username })
-    )
-  }
+  getKid = () => {
+    axios.get(`/api/kid/${this.props.parentReducer.user.username}`)
+    .then(res =>
+      this.props.updateKid({res})
+
+      )};
   
 
   render () {
-
-    console.log(this.state);
+    
+    console.log(this.props)
 
     return (
       <div>
         <Header />
         <Nav />
         <AddKid />
+
       </div>
 
     )
   }
 }
 
-export default Kid
+const mapStateToProps = state => state
+
+
+export default connect(mapStateToProps,{updateKid}) (Kid)
