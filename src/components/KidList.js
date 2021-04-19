@@ -10,21 +10,23 @@ class KidList extends Component {
     }
   }
 
-  // const kidMapped = this.props.kidReducer.
-
   render(){
 
     console.log(this.props);
 
-    const kidMapped = this.props.kidReducer.map((ele,i)=> {
-      
-    })
+    const kidMapped = this.props.kidReducer.kid.map((ele,i) => 
+    <div key={ele.kid_id}>
+      <span>{ele.name}</span>
+      <button>Liquid</button>
+      <button>Solid</button>
+    </div>
+    )
 
     return (
 
-      
-
-      <div></div>
+      <div>
+        {kidMapped}
+      </div>
 
     )
   }

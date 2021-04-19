@@ -17,7 +17,7 @@ export default function reducer (state = initialState,action) {
     case GET_KID:
       return {
         ...state,
-        user:action.payload
+        kid:action.payload
       }
 
       default: return state
