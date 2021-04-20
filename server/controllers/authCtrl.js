@@ -18,10 +18,8 @@ module.exports = {
     delete newUser.hash;
 
     req.session.user = newUser;
-
-    console.log(req.session.user)
-
-    res.status(200).send(req.session.user)
+    
+    await res.status(200).send(req.session.user)
   },
             
     
@@ -53,9 +51,9 @@ module.exports = {
     return res.sendStatus(200)
   },
 
-  getUser: (req,res) => {
+  getUser: async (req,res) => {
     if(req.session.user) {
-      return res.status(200).send(req.session.user)
+      return await res.status(200).send(req.session.user)
     } else {
       return res.status(404).send('No user logged in.')
     };

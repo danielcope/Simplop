@@ -2,7 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home'
 import Trends from './components/Trends'
 import Notification from './components/Notification'
-import Kid from './components/Kid'
+import Kid from './components/Kid/Kid'
 
 export default (
     <Switch>

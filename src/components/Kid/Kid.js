@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import Nav from './Nav'
-import AddKid from './AddKid'
-import Header from './Header'
+import Nav from './KidNav'
+import AddKid from '../AddKid'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import { updateKid } from '../redux/kidReducer'
-import KidList from './KidList'
+import { updateKid } from '../../redux/kidReducer'
+import KidList from '../KidList'
 
 
 class Kid extends Component {
@@ -20,8 +19,8 @@ class Kid extends Component {
     this.getKid()
   }
 
-  getKid = () => {
-    axios.get(`/api/kid`)
+  getKid = async () => {
+    await axios.get(`/api/kid`)
     .then(res =>
       this.props.updateKid(res.data)
       )};
@@ -31,8 +30,7 @@ class Kid extends Component {
     
 
     return (
-      <div>
-        <Header />
+      <div  className='kid-view'>
         <div className='nav'>
           <Nav />
         </div>

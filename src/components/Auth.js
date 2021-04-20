@@ -22,11 +22,11 @@ class Auth extends Component {
     this.setState({ password:val })
   }
   
-  login = () => {
+  login = async () => {
 
     const { username,password } = this.state
 
-    axios.post('/auth/login', {username:username,password:password})
+    await axios.post('/auth/login', {username:username,password:password})
       .then(res => {
         this.props.updateUser({username:username})
         this.props.history.push('/kid')

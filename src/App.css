@@ -9,9 +9,13 @@
   top: 25vh;
   left:45%;
   font-size: 5vh;
-  color:rgb(0, 27, 77);
   width: 50%;
   text-align: center;
+  border: solid 2px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.404);
+  color:rgb(0, 27, 77);
 }
 
 .home {
@@ -113,18 +117,46 @@
   color: rgb(0, 13, 48); 
 }
 
+.kid-view {
+  background: url(https://t4.ftcdn.net/jpg/02/18/88/23/360_F_218882329_ZsfpJDtFWKvwnRewvzr80z551IrXvnTK.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh; 
+}
+
 .kid {
-  height: 10vh;
+  height: 20vh;
   width: 95vw;
   display: flex;
+  flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: space-around;
   border: 1px solid;
-  margin:5px 
+  margin:15px;
+  background:rgba(182, 206, 218, 0.89);
+}
+
+.name-pencil {
+  display: flex;
+}
+
+.kid-name {
+  text-transform: capitalize;
+  font-size: 24px;
+}
+
+.pencil {
+  height: 25px;
+  width: 25px;
+  font-size: 24px;
+  margin-right: 5px;
 }
 
 .add-kid {
+  background:rgba(182, 206, 218, 0.705);
   height: 10vh;
   width: 95vw;
   display: flex;
@@ -132,17 +164,41 @@
   align-items: center;
   justify-content: space-around;
   border: 1px solid;
-  margin:5px 
+  margin:15px;
 }
 
 .add-kid-button {
   height: 50%;
-
+  width: 15vw;
 }
 
 .add-kid-input {
   height: 50%;
+  padding-left:15px;
 }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  height: 10vh;
+}
+
+.nav-menu {
+  width:40vw;
+  text-align: center;
+}
+
+.event-dropdown {
+  color:rgb(0, 13, 48);
+  background: rgb(230, 229, 229);
+  text-align: center;
+  margin:5px; 
+}
+
+.time-label {
+  margin-right: 5px;
+}
+
 
 @media (min-width:700px) {
   .welcome {
@@ -211,8 +267,8 @@
 /* TRASH CAN */
 
 .icon-trash {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   position: relative;
   overflow: hidden;
 }
@@ -224,7 +280,7 @@
   left: 50%;
   margin-left: -31%;
   top: 10.5%;
-  background-color: #000;
+  background-color: rgb(1, 48, 110);
   border-top-left-radius: 80%;
   border-top-right-radius: 80%;
   -webkit-transform: rotate(-5deg);
@@ -257,7 +313,7 @@
   left: 50%;
   margin-left: -28%;
   bottom: 10%;
-  background-color: #000;
+  background-color: rgb(1, 48, 110);
   border-bottom-left-radius: 15%;
   border-bottom-right-radius: 15%;
 }
@@ -282,7 +338,7 @@
   left: 38%;
   margin-left: -2%;
   bottom: 17%;
-  background-color: #252527;
+  background-color: #d3effa;
 }
 
 .icon-trash .trash-line-2 {
@@ -292,7 +348,7 @@
   left: 50%;
   margin-left: -2%;
   bottom: 17%;
-  background-color: #252527;
+  background-color: #d3effa;
 }
 
 .icon-trash .trash-line-3 {
@@ -302,7 +358,8 @@
   left: 62%;
   margin-left: -2%;
   bottom: 17%;
-  background-color: #252527;
+  background-color: #d3effa;
 }
 
 /* END TRASH CAN */
+
