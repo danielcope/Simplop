@@ -24,7 +24,7 @@ class Nav extends Component {
     return (
       <div>
         <div className='nav-menu'>
-          <Link to='/trends'>Trends</Link>
+          <Link to='/trends/:id'>Trends</Link>
           <Link to='/notification' className='nav-not'>Notifications</Link>
           <Link to='/' onClick={this.props.logout} className='nav-logout'>Logout</Link>
         </div>

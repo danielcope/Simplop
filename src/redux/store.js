@@ -1,11 +1,14 @@
 import { createStore } from 'redux'
 import parentReducer from './parentReducer'
 import kidReducer from './kidReducer'
+import eventReducer from './eventReducer'
 import { combineReducers } from 'redux'
+
 
 const reducer = combineReducers({
   parentReducer,
-  kidReducer
+  kidReducer,
+  eventReducer
 })
 
 export default createStore(

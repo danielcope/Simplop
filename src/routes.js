@@ -7,7 +7,7 @@ import Kid from './components/Kid/Kid'
 export default (
     <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/trends' component={Trends} />
+        <Route path='/trends/:id' component={Trends} />
         <Route path='/notification' component={Notification} />
         <Route path='/kid' component={Kid} />
     </Switch>

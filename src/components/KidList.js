@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
 
 class KidList extends Component {
 
@@ -54,12 +55,10 @@ class KidList extends Component {
 
   handleHourInput = (val) => {
     this.setState({ hour:val })
-    console.log(val)
   }
 
   handleMinInput = (val) => {
     this.setState({ min:val })
-    console.log(val)
   }
 
   handleAmPmInput = (val) => {
@@ -70,17 +69,19 @@ class KidList extends Component {
     this.setState({ type: val })
   }
 
+
+
   addEvent = () => {
-    
+
   }
 
 
   render(){
-        
+      
     const kidMapped = this.props.kidReducer.kid.map((ele,i) => (
     <div key={ele.kid_id}className='kid'>
       <div className='name-pencil'>
-        <div class="pencil" onClick={this.handleNameEdit}>&#9998;</div>
+        <div className="pencil" onClick={this.handleNameEdit}>&#9998;</div>
 
       {
       this.state.editName ? 
@@ -92,7 +93,9 @@ class KidList extends Component {
         : 
         <span className='kid-name'>{ele.name}</span>
       }
-             
+
+          <Link to={`/trends/${ele.kid_id}`}>View events</Link>
+
       </div>
       <section className='time-row'>
         <label className='time-label'>Time:</label>
@@ -127,11 +130,63 @@ class KidList extends Component {
           <option>Solid</option>
         </select>  
 
+
         <button className='event-submit'>Submit</button>
 
       </section>
-      
+      <section className='date-row'>
+        <label>Date:</label>
+        <span>Day:</span>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <span>Month:</span>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+        </select>
 
+      </section>
       <section>
 
         

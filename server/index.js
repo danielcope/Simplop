@@ -35,9 +35,8 @@ app.put ( '/api/kid/:kid_id', kidCtrl.editName )
 app.delete ( '/api/kid/:kid_id', kidCtrl.deleteKid )
 
 //EVENT endpoints
-app.get( '/api/event', eventCtrl.getEvent )
+app.get( '/api/event/:id', eventCtrl.getEvent )
 app.post( '/api/event', eventCtrl.addEvent )
-app.put( '/api/event/:event_id', eventCtrl.editEvent )
 app.delete( '/api/event/:event_id', eventCtrl.deleteEvent )
 
 // Notification endpoints

@@ -18,12 +18,12 @@ CREATE TABLE kid (
 CREATE TABLE event (
   event_id SERIAL PRIMARY KEY,
   kid_id int references kid (kid_id),
-  num1_num2 varchar (20),
+  type varchar (20),
   hour int,
   min int,
+  am_pm varchar(20),
   month int,
-  day int,
-  year int
+  day int
 );
 
 CREATE TABLE notification (
