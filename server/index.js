@@ -40,7 +40,7 @@ app.post( '/api/event', eventCtrl.addEvent )
 app.delete( '/api/event/:event_id', eventCtrl.deleteEvent )
 
 // Notification endpoints
-app.get ( '/api/notification', notificationCtrl.getNotification )
+app.get ( '/api/notification/:id', notificationCtrl.getNotification )
 app.put( '/api/notification/:notification_id', notificationCtrl.editNotification )
 app.post( '/api/notification', notificationCtrl.addNotification )
 app.delete( '/api/notification/:notification_id', notificationCtrl.deleteNotification )

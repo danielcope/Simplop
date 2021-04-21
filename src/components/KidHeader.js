@@ -9,7 +9,7 @@ const KidHeader = (props) => {
   })
 
   return (
-    <h1></h1>
+    <h1 className='kid-header'>Kids</h1>
 
 )
 }

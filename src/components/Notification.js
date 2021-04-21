@@ -1,19 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import NotificationList from './NotificationList'
 
-class Notification extends Component {
-  constructor (){
-    super();
-    this.state = {
-}
-}
+const Notification  = () => {
 
-  render(){
-    return (
-      <div>
-        
-      </div>
+
+  return (
+    <div>
+      <NotificationList/>
+    </div>
     )
   }
-}
 
 export default Notification

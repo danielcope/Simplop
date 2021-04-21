@@ -142,10 +142,18 @@
   border: 1px solid rgb(45, 54, 133);
   margin:15px;
   background:rgba(182, 206, 218, 0.89);
+  max-width: 450px;
+  min-width:350px;
 }
 
 .kid-top {
   display: flex;
+}
+
+.kid-header {
+  position: fixed;
+  top:5px;
+  left:20px;
 }
 
 .kid-pencil-view {
@@ -306,12 +314,13 @@
   display: flex;
   justify-content: flex-end;
   height:10vh;
+  margin-top: 15px;
 }
 
 .kid-nav-ham {
   position:fixed;
   font-size: 40px;
-  padding: 10px;
+  padding-right: 10px;
 }
 
 .nav-menu-closed {
@@ -342,16 +351,12 @@
   font-size: 20px;
   text-decoration: none;
   color:rgb(148, 193, 245);
-  display: flex;
-  justify-content: flex-end;
   margin-right: 20px;
 }
 
 .kid-nav-logout {
   text-decoration: none;
   color:rgb(148, 193, 245);
-  display: flex;
-  justify-content: flex-end;
   font-size: 20px;
   margin-right: 20px;
 }
@@ -374,6 +379,7 @@
 .event-kid-name {
   text-transform: capitalize;
   text-decoration: underline;
+  margin-bottom: 15px;
 }
 
 .date-event {
@@ -436,6 +442,15 @@
   height: 100%;
 }
 
+.delete-event {
+  border:none;
+  border-right: black solid 1px;
+  background:none;
+  font-size: 18px;
+  padding:10px;
+}
+
+
 /* END EVENT */
 
 
@@ -445,6 +460,15 @@
     width: 40%;
     font-size: 6vh;
   }
+
+  .kid-container {
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .kid {
+  }
+
 }
 
 

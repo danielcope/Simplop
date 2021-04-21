@@ -227,7 +227,7 @@ class KidList extends Component {
     
     return (
 
-      <section>
+      <section className='kid-container'>
         { kidMapped }
       </section>
 
