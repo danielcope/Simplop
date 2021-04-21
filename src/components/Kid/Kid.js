@@ -5,7 +5,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import { updateKid } from '../../redux/kidReducer'
 import KidList from '../KidList'
-
+import KidHeader from '../KidHeader'
 
 class Kid extends Component {
   constructor () {
@@ -32,6 +32,7 @@ class Kid extends Component {
     return (
       <div  className='kid-view'>
         <div className='nav'>
+          <KidHeader/>
           <Nav />
         </div>
         <KidList getKid={this.getKid}/> 

@@ -6,7 +6,6 @@ class Home extends Component {
   constructor (){
     super();
     this.state = {
-      username:'',
       menu: false
     }
   }

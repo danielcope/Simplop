@@ -86,7 +86,7 @@ class KidList extends Component {
 
     axios.post('/api/event',{kid_id:kid_id,type:type,hour:hour,min:min,am_pm:am_pm,month:month,day:day})
     .then(()=> {
-      this.props.getKid()
+      alert('Event Added! ')
     })
 
   }
@@ -113,19 +113,13 @@ class KidList extends Component {
             <Link to={`/trends/${ele.kid_id}`} className='view-events'>View events</Link>
           </div>
           <section className='trash'>
-            <div className="icon-trash" onClick={() => this.deleteKid(ele.kid_id)}>
-              <div className="trash-lid"></div>
-              <div className="trash-container"></div>
-              <div className="trash-line-1"></div>
-              <div className="trash-line-2"></div>
-              <div className="trash-line-3"></div>
-            </div>
           </section>
         </div>
       }
 
 
       </div>
+      <div className='time-date-container'>
       <section>
         <section className='time-row'>
           <label className='time-label'>Time:</label>
@@ -215,10 +209,19 @@ class KidList extends Component {
             <option>31</option>
           </select>
 
-          <button className='event-submit' onClick={e => this.addEvent(ele.kid_id)} >Submit Event</button>
+
         
         </section>
       </section>
+          </div>
+          <button className='event-submit' onClick={e => this.addEvent(ele.kid_id)} >Submit Event</button>
+          <div className="icon-trash" onClick={() => this.deleteKid(ele.kid_id)}>
+            <div className="trash-lid"></div>
+            <div className="trash-container"></div>
+            <div className="trash-line-1"></div>
+            <div className="trash-line-2"></div>
+            <div className="trash-line-3"></div>
+          </div>
     </div>
     ))
     

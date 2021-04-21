@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { updateUser,logout } from '../../redux/parentReducer'
 import { connect } from 'react-redux'
-import axios from 'axios';
 
+const Nav = (props) => {
 
-class Nav extends Component {
-  constructor () {
-    super();
-    this.state = {
-      username:'',
-      navMenu:false
-    }
-  }
-
-  logout = () => {
-    axios.delete( '/auth/logout', this.state )
-    .then(res => this.props.logout)
-  }
+  const [menu,flipMenu] = useState(false)  
   
-
-  render () {
     return (
-      <div>
-        <div className='nav-menu'>
+      <div className='kid-nav-section'>
+
+        <span className='kid-nav-ham' onClick={() => flipMenu(!menu)} >&equiv;</span>
+
+        <div className={ menu ? 'nav-menu-opened' : 'nav-menu-closed'}>
           <Link to='/notification' className='kid-nav-notification'>Notifications</Link>
-          <Link to='/' onClick={this.props.logout} className='nav-logout'>Logout</Link>
+          <Link to='/' className='kid-nav-logout' onClick={props.logout}>Logout</Link>
         </div>
+
+
       </div>
     )
+
   }
-}
+
 export default connect (null, {updateUser,logout}) (Nav)

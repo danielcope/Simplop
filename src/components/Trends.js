@@ -31,7 +31,7 @@ class  Trends extends Component {
     return (
 
 
-      <div>
+      <div className='event-view'>
         <TrendsNav />
         <TrendsList getEvent={this.getEvent} />        
       </div>

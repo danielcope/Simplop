@@ -15,6 +15,7 @@ class TrendsList extends Component {
 
     const eventMapped = this.props.eventReducer.event.map((ele,i) => (
       <div key={ele.event_id} className='event'>
+        
         <section className='date-event'>
           {ele.month}/{ele.day}
         </section>
@@ -23,11 +24,15 @@ class TrendsList extends Component {
           {ele.hour}:{ele.min} {ele.am_pm}
         </section>
 
+        <section className='type-event'>
+          {ele.type}
+        </section>
+
       </div>
     ))
     
     return (
-      <div className='event-view'>
+      <div className='event-list'>
         { this.props.eventReducer.event[0]
           ?
         <h1 className='event-kid-name'>{this.props.eventReducer.event[0].name}</h1> :
