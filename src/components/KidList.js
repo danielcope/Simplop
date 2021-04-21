@@ -81,20 +81,22 @@ class KidList extends Component {
     const kidMapped = this.props.kidReducer.kid.map((ele,i) => (
     <div key={ele.kid_id}className='kid'>
       <div className='name-pencil'>
-        <div className="pencil" onClick={this.handleNameEdit}>&#9998;</div>
 
       {
-      this.state.editName ? 
+        this.state.editName ? 
         <div>
-          <input placeholder={ele.name} onChange={(e) => this.handleNewName(e.target.value) }/>
-          <button onClick={() => this.editKid(ele.kid_id)}>Submit</button>
-          <button onClick={this.cancelEdit}>X</button>
+          <input placeholder={ele.name} onChange={(e) => this.handleNewName(e.target.value) } className='edit-name-input'/>
+          <button className='edit-kid-submit' onClick={() => this.editKid(ele.kid_id)}>Submit</button>
+          <button className='edit-kid-close' onClick={this.cancelEdit}>X</button>
         </div>
         : 
-        <span className='kid-name'>{ele.name}</span>
+        <div className='kid-top'>
+          <span className='kid-name'>{ele.name}</span>
+          <div className="pencil" onClick={this.handleNameEdit}>&#9998;</div>
+          <Link to={`/trends/${ele.kid_id}`} className='view-events'>View events</Link>
+        </div>
       }
 
-          <Link to={`/trends/${ele.kid_id}`}>View events</Link>
 
       </div>
       <section className='time-row'>
@@ -135,7 +137,7 @@ class KidList extends Component {
 
       </section>
       <section className='date-row'>
-        <label>Date:</label>
+        <label className='date-label'>Date:</label>
         <span>Day:</span>
         <select>
           <option>1</option>

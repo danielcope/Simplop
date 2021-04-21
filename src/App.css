@@ -127,7 +127,7 @@
 }
 
 .kid {
-  height: 20vh;
+  height: 30vh;
   width: 95vw;
   display: flex;
   flex-direction: column;
@@ -139,8 +139,40 @@
   background:rgba(182, 206, 218, 0.89);
 }
 
+.kid-top {
+  display: flex;
+}
+
 .name-pencil {
   display: flex;
+  width: 50%;
+}
+
+.edit-name-input {
+  width: 50%;
+  height: 30px;
+  border: solid 1px grey;
+  background: rgb(225, 236, 241);
+  box-shadow: none;
+  padding-right: 15px;
+}
+
+.edit-kid-submit {
+  height:30px;
+  background: none; 
+  border: none; 
+  box-shadow: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.edit-kid-close {
+  height:30px;
+  background: none; 
+  border: none; 
+  box-shadow: none;
+  font-size: 16px;
+  padding: 5px;
 }
 
 .kid-name {
@@ -153,6 +185,12 @@
   width: 25px;
   font-size: 24px;
   margin-right: 5px;
+}
+
+.view-events {
+  padding-top: 5px;
+  height: 100%;
+  padding-left: 40px;
 }
 
 .add-kid {
@@ -177,17 +215,6 @@
   padding-left:15px;
 }
 
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  height: 10vh;
-}
-
-.nav-menu {
-  width:40vw;
-  text-align: center;
-}
-
 .event-dropdown {
   color:rgb(0, 13, 48);
   background: rgb(230, 229, 229);
@@ -197,7 +224,57 @@
 
 .time-label {
   margin-right: 5px;
+  font-size: 18px;
 }
+
+.date-label {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* Kid Nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  height: 10vh;
+}
+
+.nav-menu {
+  width:80vw;
+  text-align: right;
+}
+
+.kid-nav-notification {
+  margin: 5px;
+  font-size: 20px;
+}
+
+/* End Kid Nav */
+
+/* EVENT VIEW */
+
+.event-view {
+  height: 100vh;
+  width: 100vw; 
+  background: rgb(148, 193, 245);
+}
+
+.event {
+  display: flex;
+}
+
+.date-event {
+
+}
+
+.time-event {
+
+}
+
+
+
+/* END EVENT */
 
 
 @media (min-width:700px) {

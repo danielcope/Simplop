@@ -15,15 +15,25 @@ class TrendsList extends Component {
 
     const eventMapped = this.props.eventReducer.event.map((ele,i) => (
       <div key={ele.event_id} className='event'>
-        <h1>{ele.name}</h1>
-        <div>
-          
-        </div>
+        <section className='date-event'>
+          {ele.month}/{ele.day}
+        </section>
+
+        <section className='time-event'>
+          {ele.hour}:{ele.min} {ele.am_pm}
+        </section>
+
       </div>
     ))
-
+    
     return (
-      <div>
+      <div className='event-view'>
+        { this.props.eventReducer.event[0]
+          ?
+        <h1 className='event-kid-name'>{this.props.eventReducer.event[0].name}</h1> :
+        <h2>Please add events on the Home page</h2>
+        }
+          
         { eventMapped }
       </div>
     )
