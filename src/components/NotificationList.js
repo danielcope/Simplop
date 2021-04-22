@@ -20,7 +20,8 @@ class NotificationList extends Component {
     axios.get(`/api/notification/${this.props.kidReducer.kid[0].parent_id}`)
     .then(res => {
       this.props.updateNotification(res.data
-        )}
+        )
+      }
     
   )}
 
@@ -28,16 +29,16 @@ class NotificationList extends Component {
 
     console.log(this.props)
 
-    // const mappedNotification = this.props.notificationReducer.notification.map((ele,i)=>{
-    //   <div key={ele.notification_id}>
-    //     {ele.notification_id}
-    //   </div>
-    // })
+    const mappedNotification = this.props.notificationReducer.notification.map((ele,i) => (
+      <div key={ele.notification_id}>
+        <span>{ele.notification_id}</span>
+      </div>
+    ))
 
 
     return (
       <div>
-        {/* {mappedNotification} */}
+        {mappedNotification}
       </div>
     )
   }

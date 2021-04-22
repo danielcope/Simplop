@@ -1,5 +1,3 @@
-
-
 module.exports = {
   getNotification: async (req, res) => {
     const db = req.app.get('db');
@@ -12,7 +10,7 @@ module.exports = {
             
     
   addNotification: async (req, res) => {
-     
+    
   },
 
   editNotification: async (req,res) => {
