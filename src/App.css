@@ -45,6 +45,8 @@
   transition: opacity 0.4s, top 0.4s;
   color: white;
   z-index: 2;
+  box-shadow:  0px 0px 17px 1px rgba(0,0,0,0.68);
+
 }
 
 .auth-closed {
@@ -123,7 +125,7 @@
 }
 
 .kid-view {
-  background:rgb(255, 251, 232);
+  background:rgb(224, 249, 255);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -139,11 +141,12 @@
   align-content: center;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid rgb(45, 54, 133);
+  /* border: 1px solid rgb(45, 54, 133); */
   margin:15px;
-  background:rgba(182, 206, 218, 0.89);
+  background:rgba(222, 244, 255, 0.89);
   max-width: 450px;
   min-width:350px;
+  box-shadow: rgb(173, 173, 173) 5px 5px 14px 1px;
 }
 
 .kid-top {
@@ -152,8 +155,9 @@
 
 .kid-header {
   position: fixed;
-  top:5px;
+  top:15px;
   left:20px;
+  text-decoration: underline;
 }
 
 .kid-pencil-view {
@@ -164,6 +168,7 @@
   display: flex;
   width: 80%;
   height: 15%;
+  border-bottom: grey 1px solid;
 }
 
 .edit-name-input {
@@ -219,7 +224,7 @@
 }
 
 .add-kid {
-  background:rgba(182, 206, 218, 0.705);
+  background:rgba(222, 244, 255, 0.89);
   height: 10vh;
   width: 95vw;
   display: flex;
@@ -228,13 +233,14 @@
   justify-content: space-around;
   border: 1px solid;
   margin:15px;
+  box-shadow: rgb(173, 173, 173) 5px 5px 14px 1px;
 }
 
 .add-kid-button {
   height: 50%;
   width: 15vw;
   font-size: 20px;
-  background-color: rgba(182, 206, 218, 0.89);
+  background-color: rgba(222, 244, 255, 0.89);
   color: rgb(1, 14, 71);
   border: solid 1px rgb(1, 14, 71);
   box-shadow: none;
@@ -301,6 +307,60 @@
   padding: 5px;
 }
 
+.add-notification-container {
+  position:fixed;
+  top: 150px;
+  left:95px; 
+  border: rgb(0, 13, 48) solid 1px;
+  height: 25vh;
+  width: 50vw;
+  box-shadow: 3px 3px 17px 1px rgba(83, 83, 83, 0.68)
+  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 250px;
+}
+
+.add-title {
+  text-align:center;
+}
+
+.notification-time-row {
+  display: flex;
+  align-content: space-around;
+  width: 100%;
+  padding-left: 50px;
+}
+
+.notification-submit {
+  width:50%;
+  height: 30px;
+  margin-left: 65px;
+}
+
+.notification-list {
+  margin-top: 300px;
+  padding: 40px
+}
+
+.current-notification {
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.notification-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px;
+  font-size: 18px; 
+}
+
+.blah {
+  padding: 10px; 
+}
+
 /* Kid Nav */
 
 .nav {
@@ -308,19 +368,24 @@
   justify-content: flex-end;
   height: 10vh;
   align-items: center;
+  box-shadow: 0px 2px 14px 1px rgba(0,0,0,0.66);
+  background: rgb(255, 251, 232);
 }
 
 .kid-nav-section {
   display: flex;
   justify-content: flex-end;
   height:10vh;
-  margin-top: 15px;
+  padding-top: 20px;
 }
 
 .kid-nav-ham {
   position:fixed;
   font-size: 40px;
-  padding-right: 10px;
+  right: 5px;
+  top:10px;
+  padding-right: 15px;
+  margin-bottom: 5px;
 }
 
 .nav-menu-closed {
@@ -340,23 +405,26 @@
   top: 10vh;
   width:100vw;
   background: rgb(1, 14, 71);
-  border: solid 1px rgb(148, 193, 245);
   z-index: 5;
-  height: 30vh;
+  height: 15vh;
   transition: opacity 0.4s, top 0.4s;
+  background: rgb(255, 251, 232);
+  box-shadow: 0px 10px 11px 1px rgba(177, 177, 177, 0.66);
 }
 
 
 .kid-nav-notification {
   font-size: 20px;
   text-decoration: none;
-  color:rgb(148, 193, 245);
+  color:rgb(0, 0, 0);
   margin-right: 20px;
+  padding-left: 20px;
 }
 
 .kid-nav-logout {
+  padding-left: 20px;
   text-decoration: none;
-  color:rgb(148, 193, 245);
+  color:rgb(0, 0, 0);
   font-size: 20px;
   margin-right: 20px;
 }
@@ -461,7 +529,7 @@
 .notification-view {
   height: 100vh;
   width: 100vw; 
-  background: rgb(148, 193, 245);
+  background: rgb(218, 235, 255);
 }
 
 notification-nav-section {
@@ -471,8 +539,17 @@ notification-nav-section {
   height:10vh;
 }
 
+.notification-top {
+  background: rgb(255, 252, 238);
+  box-shadow: 0px 16px 17px -2px rgba(194, 194, 194, 0.68)
+}
+
 .notification-header {
   height: 10vh;
+  position: relative;
+  top:15px;
+  padding-left:15px;
+  ;
 }
 
 .notification-nav-ham {
@@ -491,17 +568,21 @@ notification-nav-section {
   position: fixed;
   top: 10vh;
   width:100vw;
-  background: rgb(240, 229, 171);
-  border: solid 1px rgb(1, 14, 71);
+  background:  rgb(255, 252, 238);
   transition: opacity 0.4s, top 0.4s;
-  height: 25vh;
+  height: 15vh;
+  z-index: 2;
+  box-shadow: 0px 15px 17px 2px rgba(136, 136, 136, 0.68)
+  ;
 }
 
 .notification-menu-closed {
   position:relative;
-  top: -300px;
+  top: -500px;
   transition: opacity 0.4s, top 0.4s;
 }
+
+
 
 /* END NOTIFICATION */
 
@@ -515,6 +596,25 @@ notification-nav-section {
   .kid-container {
     display:flex;
     flex-wrap: wrap;
+  }
+
+  .add-notification-container {
+    position:fixed;
+    top: 175px;
+    left: 900px;
+    border: rgb(0, 13, 48) solid 1px;
+    height: 40vh;
+    width: 350px;
+    box-shadow: 3px 3px 17px 1px rgba(83, 83, 83, 0.68)
+    ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 350px;
+  }
+
+  .notification-list {
+    margin-top: 0px;
   }
 
 

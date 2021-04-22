@@ -11,33 +11,29 @@ class NotificationList extends Component {
     }
   }
 
+  deleteNotification = (notification_id) => {
 
-  componentDidMount = () => {
-    this.getNotification()
+    axios.delete(`/api/notification/${notification_id}`)
+    .then(res=>this.props.getNotification())
   }
-
-  getNotification = () => {
-    axios.get(`/api/notification/${this.props.kidReducer.kid[0].parent_id}`)
-    .then(res => {
-      this.props.updateNotification(res.data
-        )
-      }
-    
-  )}
+  
 
   render(){
 
-    console.log(this.props)
 
     const mappedNotification = this.props.notificationReducer.notification.map((ele,i) => (
-      <div key={ele.notification_id}>
-        <span>{ele.notification_id}</span>
+      <div key={ele.notification_id} className='notification-element' >
+        <div>
+        <span className='blah' onClick={e => this.deleteNotification(ele.notification_id)}>X</span>
+        <span>{ele.notification_hour}:{ele.notification_min} {ele.am_pm}</span>
+        </div>
       </div>
     ))
 
 
     return (
-      <div>
+      <div >
+        <h2 className='current-notification'>Current Notifications</h2>
         {mappedNotification}
       </div>
     )
