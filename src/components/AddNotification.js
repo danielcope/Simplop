@@ -36,7 +36,6 @@ class AddNotification extends Component {
   }
 
   render(){
-
     
     return (
       <div className='add-notification-container'>

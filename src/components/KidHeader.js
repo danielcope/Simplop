@@ -4,13 +4,8 @@ import { connect } from 'react-redux'
 
 const KidHeader = (props) => {
 
-  useEffect(() => {
-    alert(`Welcome, ${props.parentReducer.user.username}!`)
-  })
-
   return (
     <h1 className='kid-header'>Kids</h1>
-
 )
 }
 
