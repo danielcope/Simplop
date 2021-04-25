@@ -6,19 +6,18 @@ const authCtrl = require('./controllers/authCtrl')
 const kidCtrl = require('./controllers/kidCtrl')
 const eventCtrl = require('./controllers/eventCtrl')
 const notificationCtrl = require('./controllers/notificationCtrl')
-// const path = require('path')
+const path = require('path')
 const app = express();
 
 const { SERVER_PORT,CONNECTION_STRING,SESSION_SECRET } = process.env;
 
 app.use(express.json());
 
+app.use(express.static(__dirname + '/../build'))
 
-// app.use(express.static(__dirname + '../build'))
-// app.get ('*',(req,res => {
-//   res.sendFile(path.join(__dirname + '../build/index.html'))
-// }))
-
+app.get ('*',(res => {
+  res.sendFile(path.join(__dirname, '../build/index.html'))
+}))
 
 app.use(session({
   secret: SESSION_SECRET,

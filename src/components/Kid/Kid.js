@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './KidNav'
-import AddKid from '../AddKid'
+import AddKid from './AddKid'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import { updateKid } from '../../redux/kidReducer'

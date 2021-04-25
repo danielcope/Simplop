@@ -18,6 +18,7 @@ class Home extends Component {
   
   render(){
     const { history } = this.props
+    console.log(this.state.menu)
 
     return (
       <div className='home'>
