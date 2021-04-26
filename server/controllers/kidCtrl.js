@@ -4,7 +4,6 @@ module.exports = {
   getKid: async (req, res) => {
     const db = req.app.get('db');
     const { username } = req.session.user
-
     const kids = await db.kid.get_kid(username)
 
     res.status(200).send(kids)

@@ -24,7 +24,7 @@ class Kid extends Component {
     await axios.get(`/api/kid`)
     .then(res =>
       this.props.updateKid(res.data)
-      )};
+  )};
   
 
   render () {
