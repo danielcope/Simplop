@@ -13,6 +13,7 @@ class Home extends Component {
   
   clickHandler = () => {
     this.setState({ menu: !this.state.menu })
+    console.log(this.state.menu)
   }
 
   
