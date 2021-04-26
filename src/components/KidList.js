@@ -94,141 +94,143 @@ class KidList extends Component {
 
   render(){
 
-    const kidMapped = this.props.kidReducer.kid.map((ele,i) => (
-    <div key={ele.kid_id}className='kid'>
-      <div className='name-pencil'>
+    console.log(this.props)
 
-      {
-        this.state.editName ? 
-        <div>
-          <input placeholder={ele.name} onChange={(e) => this.handleNewName(e.target.value) } className='edit-name-input'/>
-          <button className='edit-kid-submit' onClick={() => this.editKid(ele.kid_id)}>Submit</button>
-          <button className='edit-kid-close' onClick={this.cancelEdit}>X</button>
-        </div>
-        :
-        <div className='kid-top' > 
-          <div className='kid-pencil-view' >
-            <span className='kid-name'>{ele.name}</span>
-            <div className="pencil" onClick={this.handleNameEdit}>&#9998;</div>
-            <Link to={`/trends/${ele.kid_id}`} className='view-events'>View events</Link>
-          </div>
-          <section className='trash'>
-          </section>
-        </div>
-      }
+    // const kidMapped = this.props.kidReducer.kid.map((ele,i) => (
+    // <div key={ele.kid_id}className='kid'>
+    //   <div className='name-pencil'>
 
-
-      </div>
-      <div className='time-date-container'>
-      <section>
-        <section className='time-row'>
-          <label className='time-label'>Time:</label>
-          <select className='event-dropdown' onChange={(e) => this.handleHourInput(e.target.value)}>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-
-          <select className='event-dropdown' onChange={(e) => this.handleMinInput(e.target.value)}>
-            <option>00</option>
-            <option>15</option>
-            <option>30</option>
-            <option>45</option>
-          </select>
-
-          <select className='event-dropdown' onChange={(e)=> this.handleAmPmInput(e.target.value)}>
-            <option>AM</option>
-            <option>PM</option>
-          </select>
-          <select className='event-dropdown' onChange={(e) => this.handleTypeInput(e.target.value)}> 
-            <option>Liquid</option>
-            <option>Solid</option>
-          </select>  
+    //   {
+    //     this.state.editName ? 
+    //     <div>
+    //       <input placeholder={ele.name} onChange={(e) => this.handleNewName(e.target.value) } className='edit-name-input'/>
+    //       <button className='edit-kid-submit' onClick={() => this.editKid(ele.kid_id)}>Submit</button>
+    //       <button className='edit-kid-close' onClick={this.cancelEdit}>X</button>
+    //     </div>
+    //     :
+    //     <div className='kid-top' > 
+    //       <div className='kid-pencil-view' >
+    //         <span className='kid-name'>{ele.name}</span>
+    //         <div className="pencil" onClick={this.handleNameEdit}>&#9998;</div>
+    //         <Link to={`/trends/${ele.kid_id}`} className='view-events'>View events</Link>
+    //       </div>
+    //       <section className='trash'>
+    //       </section>
+    //     </div>
+    //   }
 
 
+    //   </div>
+    //   <div className='time-date-container'>
+    //   <section>
+    //     <section className='time-row'>
+    //       <label className='time-label'>Time:</label>
+    //       <select className='event-dropdown' onChange={(e) => this.handleHourInput(e.target.value)}>
+    //         <option>1</option>
+    //         <option>2</option>
+    //         <option>3</option>
+    //         <option>4</option>
+    //         <option>5</option>
+    //         <option>6</option>
+    //         <option>7</option>
+    //         <option>8</option>
+    //         <option>9</option>
+    //         <option>10</option>
+    //         <option>11</option>
+    //         <option>12</option>
+    //       </select>
 
-        </section>
-        <section className='date-row'>
-          <label className='date-label'>Date:</label>
-          <span>Month:</span>
-          <select className='month-dropdown' onChange={e => this.handleMonthInput(e.target.value)}>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <span>Day:</span>
-          <select className='day-dropdown' onChange={e => this.handleDayInput(e.target.value)}>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-            <option>24</option>
-            <option>25</option>
-            <option>26</option>
-            <option>27</option>
-            <option>28</option>
-            <option>29</option>
-            <option>30</option>
-            <option>31</option>
-          </select>
+    //       <select className='event-dropdown' onChange={(e) => this.handleMinInput(e.target.value)}>
+    //         <option>00</option>
+    //         <option>15</option>
+    //         <option>30</option>
+    //         <option>45</option>
+    //       </select>
+
+    //       <select className='event-dropdown' onChange={(e)=> this.handleAmPmInput(e.target.value)}>
+    //         <option>AM</option>
+    //         <option>PM</option>
+    //       </select>
+    //       <select className='event-dropdown' onChange={(e) => this.handleTypeInput(e.target.value)}> 
+    //         <option>Liquid</option>
+    //         <option>Solid</option>
+    //       </select>  
+
+
+
+    //     </section>
+    //     <section className='date-row'>
+    //       <label className='date-label'>Date:</label>
+    //       <span>Month:</span>
+    //       <select className='month-dropdown' onChange={e => this.handleMonthInput(e.target.value)}>
+    //         <option>1</option>
+    //         <option>2</option>
+    //         <option>3</option>
+    //         <option>4</option>
+    //         <option>5</option>
+    //         <option>6</option>
+    //         <option>7</option>
+    //         <option>8</option>
+    //         <option>9</option>
+    //         <option>10</option>
+    //         <option>11</option>
+    //         <option>12</option>
+    //       </select>
+    //       <span>Day:</span>
+    //       <select className='day-dropdown' onChange={e => this.handleDayInput(e.target.value)}>
+    //         <option>1</option>
+    //         <option>2</option>
+    //         <option>3</option>
+    //         <option>4</option>
+    //         <option>5</option>
+    //         <option>6</option>
+    //         <option>7</option>
+    //         <option>8</option>
+    //         <option>9</option>
+    //         <option>10</option>
+    //         <option>11</option>
+    //         <option>12</option>
+    //         <option>13</option>
+    //         <option>14</option>
+    //         <option>15</option>
+    //         <option>16</option>
+    //         <option>17</option>
+    //         <option>18</option>
+    //         <option>19</option>
+    //         <option>20</option>
+    //         <option>21</option>
+    //         <option>22</option>
+    //         <option>23</option>
+    //         <option>24</option>
+    //         <option>25</option>
+    //         <option>26</option>
+    //         <option>27</option>
+    //         <option>28</option>
+    //         <option>29</option>
+    //         <option>30</option>
+    //         <option>31</option>
+    //       </select>
 
 
         
-        </section>
-      </section>
-          </div>
-          <button className='event-submit' onClick={e => this.addEvent(ele.kid_id)} >Submit Event</button>
-          <div className="icon-trash" onClick={() => this.deleteKid(ele.kid_id)}>
-            <div className="trash-lid"></div>
-            <div className="trash-container"></div>
-            <div className="trash-line-1"></div>
-            <div className="trash-line-2"></div>
-            <div className="trash-line-3"></div>
-          </div>
-    </div>
-    ))
+    //     </section>
+    //   </section>
+    //       </div>
+    //       <button className='event-submit' onClick={e => this.addEvent(ele.kid_id)} >Submit Event</button>
+    //       <div className="icon-trash" onClick={() => this.deleteKid(ele.kid_id)}>
+    //         <div className="trash-lid"></div>
+    //         <div className="trash-container"></div>
+    //         <div className="trash-line-1"></div>
+    //         <div className="trash-line-2"></div>
+    //         <div className="trash-line-3"></div>
+    //       </div>
+    // </div>
+    // ))
     
     return (
 
       <section className='kid-container'>
-        { kidMapped }
+        {/* { kidMapped } */}
       </section>
 
     )

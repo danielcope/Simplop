@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path')
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session')
@@ -6,27 +7,26 @@ const authCtrl = require('./controllers/authCtrl')
 const kidCtrl = require('./controllers/kidCtrl')
 const eventCtrl = require('./controllers/eventCtrl')
 const notificationCtrl = require('./controllers/notificationCtrl')
-const path = require('path')
 const app = express();
-
 const { SERVER_PORT,CONNECTION_STRING,SESSION_SECRET } = process.env;
 
 app.use(express.json());
 
-app.use(express.static(__dirname + '/../build'))
+app.use(express.static(`${__dirname}/../build`))
 
-app.get ('*',(res => {
-  res.sendFile(path.join(__dirname, '../build/index.html'))
-}))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../build/index.html'))
+})
 
 app.use(session({
   secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7 * 52
-    }
-  }))
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7 * 52
+  }
+}))
 
 //-------------Endpoints------------------
 // AUTH endpoints
@@ -55,15 +55,17 @@ app.delete( '/api/notification/:notification_id', notificationCtrl.deleteNotific
 
 //-------------------------------------------
 
+
+
 massive ({
-    connectionString: CONNECTION_STRING,
-    ssl:{
-      rejectUnauthorized:false
-    }
-  })
-    .then(dbInst => {
-      app.set('db',dbInst)
-        
-      app.listen(SERVER_PORT,() => console.log(`Server running on port` + ' ' + SERVER_PORT))
-    })
-    .catch(err => console.log(err))
+  connectionString: CONNECTION_STRING,
+  ssl:{
+    rejectUnauthorized:false
+  }
+})
+.then(dbInst => {
+  app.set('db',dbInst)
+  
+  app.listen(SERVER_PORT,() => console.log(`Server running on port` + ' ' + SERVER_PORT))
+})
+.catch(err => console.log(err))
