@@ -1,12 +1,12 @@
 require('dotenv').config();
-const path = require('path')
+const path = require('path');
 const express = require('express');
 const massive = require('massive');
-const session = require('express-session')
-const authCtrl = require('./controllers/authCtrl')
-const kidCtrl = require('./controllers/kidCtrl')
-const eventCtrl = require('./controllers/eventCtrl')
-const notificationCtrl = require('./controllers/notificationCtrl')
+const session = require('express-session');
+const authCtrl = require('./controllers/authCtrl');
+const kidCtrl = require('./controllers/kidCtrl');
+const eventCtrl = require('./controllers/eventCtrl');
+const notificationCtrl = require('./controllers/notificationCtrl');
 const app = express();
 const { SERVER_PORT,CONNECTION_STRING,SESSION_SECRET } = process.env;
 

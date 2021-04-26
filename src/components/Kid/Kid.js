@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './KidNav'
 import AddKid from './AddKid'
+import Question from '../Question'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import { updateKid } from '../../redux/kidReducer'
@@ -30,14 +31,17 @@ class Kid extends Component {
     
 
     return (
-      <div  className='kid-view'>
-        <div className='nav'>
-          <KidHeader/>
-          <Nav />
+      <>
+        <div  className='kid-view'>
+          <div className='nav'>
+            <KidHeader/>
+            <Nav />
+          </div>
+          <KidList getKid={this.getKid}/> 
+          <AddKid getKid={this.getKid}/>
         </div>
-        <KidList getKid={this.getKid}/> 
-        <AddKid getKid={this.getKid}/>
-      </div>
+        <Question />
+      </>
 
     )
   }
