@@ -94,8 +94,6 @@ class KidList extends Component {
 
   render(){
 
-    console.log(this.props)
-
     const kidMapped = this.props.kidReducer.kid.map((ele,i) => (
     <div key={ele.kid_id}className='kid'>
       <div className='name-pencil'>
