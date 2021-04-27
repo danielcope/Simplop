@@ -871,3 +871,9 @@
   margin: 5px;
   font-size: 20px;
 }
+
+.button-suggestion {
+  position: relative;
+  left: 250px;
+  max-width: 40%;
+}
