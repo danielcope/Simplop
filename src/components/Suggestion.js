@@ -1,12 +1,35 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class Suggestions extends Component {
   constructor (){
     super();
     this.state = {
+      email: '',
+      emailText:''
 }
 }
+
+  sendThanksEmail = () => {
+    axios.post( '/send', {email:this.state.email} )
+    .then(alert('email sent'))
+  }
+
+  sendFeedbackEmail = () => {
+    const {email,emailText} = this.state
+
+    axios.post( '/api/sendemail', {email:email,emailText:emailText} )
+  }
+
+  handleEmailChange = (val) => {
+    this.setState({ email: val })
+  }
+
+  handleEmailTextChange = (val) => {
+    this.setState({ emailText: val })
+  }
+
 
   render(){
     return (
@@ -17,9 +40,10 @@ class Suggestions extends Component {
           <span className='to-email'>To: Simplop Team</span>
           <div className='from-email'>
             <span>From: </span>
-            <input className='from-input' placeholder='enter your email' />
+            <input className='from-input' placeholder='enter your email' onChange={e => this.handleEmailChange(e.target.value)} />
           </div>
-          <input className='email-text'></input>
+          <input className='email-text' onChange={e => this.handleEmailTextChange(e.target.value)}></input>
+          <button onClick={this.sendThanksEmail}>Send</button>
         </section>
       </section>
     )
