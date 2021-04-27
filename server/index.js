@@ -102,7 +102,7 @@ app.post( '/api/sendemail', function (req,res,next) {
     if(err) {
       console.log('Email Error')
     } else {
-      console.log('Email Sent')
+      console.log('Feedback Sent')
     }
   })
 })

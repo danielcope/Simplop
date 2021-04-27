@@ -20,6 +20,7 @@ class Suggestions extends Component {
     const {email,emailText} = this.state
 
     axios.post( '/api/sendemail', {email:email,emailText:emailText} )
+      .then()
   }
 
   handleEmailChange = (val) => {
@@ -43,7 +44,7 @@ class Suggestions extends Component {
             <input className='from-input' placeholder='enter your email' onChange={e => this.handleEmailChange(e.target.value)} />
           </div>
           <input className='email-text' onChange={e => this.handleEmailTextChange(e.target.value)}></input>
-          <button onClick={this.sendThanksEmail}>Send</button>
+          <button onClick={this.sendThanksEmail} onClick={this.sendFeedbackEmail}>Send</button>
         </section>
       </section>
     )
